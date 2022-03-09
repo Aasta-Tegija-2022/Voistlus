@@ -12,14 +12,24 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$itasql = "SELECT sisu FROM tekst WHERE grupp = 'ITA'";
-$itaresult = $conn->query($itasql);
+$sql = "SELECT sisu FROM tekst WHERE grupp=?"; // SQL with parameters
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $grupp);
 
-$itssql = "SELECT sisu FROM tekst WHERE grupp = 'ITS'";
-$itsresult = $conn->query($itssql);
+$grupp = "ITA";
+$stmt->execute();
+$itaresult = $stmt->get_result();
 
-$sql = "SELECT sisu FROM tekst WHERE grupp = 'NONE'";
-$result = $conn->query($sql);
+$grupp = "ITS";
+$stmt->execute();
+$itsresult = $stmt->get_result();
+
+$grupp = "NONE";
+$stmt->execute();
+$result = $stmt->get_result();
+
+$eventsql = "SELECT oppegrupp, sundmus, toimumis_aeg, lopp_aeg FROM voog";
+$eventresult = $conn->query($eventsql);
 
 $conn->close();
 ?>
