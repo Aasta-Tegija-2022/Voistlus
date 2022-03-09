@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'connection.php'; ?>
+<?php
+$content = array();
+while($row = $result->fetch_assoc()) {
+$content[] = $row["sisu"];
+}
+?>
 <head>
 
     <title>Home</title>
@@ -31,7 +38,7 @@
     <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="about_page.html">Home</a>
+                <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -46,11 +53,7 @@
     <div class="overlay"></div>
     <div class="description">
         <h1>IT AKADEEMIA</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-            luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id
-            libero fringilla, in pharetra sem ullamcorper.</p>
-        <button id="go-to-aboutpage" class="btn btn-outline-secondary btn-lg" href="about_page.html">Tell Me More!
-        </button>
+        <p><?php echo $content[0] ?></p>
     </div>
 
 </header>
@@ -59,15 +62,13 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">IT Spetsialistid</h3>
             <a href="its_page.html"><img src="images/desktop.png" class="img-fluid"></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-                luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+            <p><?php echo $content[0] ?></p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Tarkvaraarendajad</h3>
             <a href="ita_page.html"><img src="images/coding.png" class="img-fluid"></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-                luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+            <p><?php echo $content[0] ?></p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -80,10 +81,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat
-                    ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat
-                    ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+                <p><?php echo $content[0] ?></p>
+                <p><?php echo $content[0] ?></p>
             </div>
         </div>
             <div class="col-lg-4 col-md-4 col-sm-12">

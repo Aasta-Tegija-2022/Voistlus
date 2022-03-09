@@ -18,5 +18,8 @@ $itaresult = $conn->query($itasql);
 $itssql = "SELECT sisu FROM tekst WHERE grupp = 'ITS'";
 $itsresult = $conn->query($itssql);
 
+$sql = "SELECT sisu FROM tekst WHERE grupp = 'NONE'";
+$result = $conn->query($sql);
+
 $conn->close();
 ?>
