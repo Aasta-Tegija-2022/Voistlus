@@ -3,52 +3,80 @@ body {
     margin: 0;
     background: #ffffff;
 }
+
 .navbar {
     background: #000000;
 }
+
 .nav-link,
 .navbar-brand {
     color: #ffffff;
     cursor: pointer;
 }
+
 .nav-item {
     margin-left: 5rem;
 }
+
 .navbar_move {
     margin-left: 5rem;
 }
+
 .logo-brand {
     height: 80px;
 }
+
 .about-image-1 {
     width: 20rem;
+    height: 20rem;
+    object-fit: cover;
 }
+
 .nav-link {
     margin-right: 1em !important;
 }
+
 .nav-link:hover {
     color: #a2a2a2;
 }
+
 .navbar-collapse {
     justify-content: flex-end;
 }
+
 .table-container {
     margin: 1em;
 }
+
 .table-text {
-max-width: 15em
+    max-width: 15em
 }
-.table-row, .header-text, .header-row, .table-text{
+
+.table-row, .header-text, .header-row, .table-text {
     padding-left: 1em;
     padding-right: 1em;
-
 }
+#date-display {
+    font-weight: bold ;
+}
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px 15px;
+    text-align: left;
+    width: 60px;
+}
+
 .header {
     background-image: url('images/voco muster RGB-01.png');
     background-size: cover;
     background-position: center;
     position: relative;
 }
+
 .overlay {
     position: absolute;
     min-height: 100%;
@@ -57,6 +85,7 @@ max-width: 15em
     top: 0;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .description {
     left: 50%;
     position: absolute;
@@ -64,30 +93,36 @@ max-width: 15em
     transform: translate(-50%, -55%);
     text-align: center;
 }
+
 .description h1 {
     color: #6ab446;
 }
+
 .description p {
     color: #fff;
     font-size: 1.3rem;
     line-height: 1.5;
 }
+
 .description button {
-    border:1px solid #6ab446;
-    background:#6ab446;
+    border: 1px solid #6ab446;
+    background: #6ab446;
     border-radius: 0;
-    color:#fff;
+    color: #fff;
 }
+
 .description button:hover {
-    border:1px solid #fff;
-    background:#fff;
-    color:#000;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #000;
 }
+
 .features {
     margin: 4em auto;
     padding: 1em;
     position: relative;
 }
+
 .feature-title {
     color: #333;
     font-size: 1.3rem;
@@ -95,17 +130,20 @@ max-width: 15em
     margin-bottom: 20px;
     text-transform: uppercase;
 }
+
 .features img {
     -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 16px;
 }
+
 .page-footer {
     background-color: #222;
     color: #ccc;
     padding: 60px 0 30px;
 }
+
 .footer-copyright {
     color: #666;
     padding: 40px 0;
