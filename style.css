@@ -7,3 +7,6 @@ td, th {
 	text-align: left;
 	width: 60px;
 }
+.hidden-row {
+	display: none;
+}
