@@ -8,3 +8,16 @@ echo "Sündmus: " . $row["sundmus"]. "<br> Õppegrupp: " . $row["oppegrupp"]. "<
 ?>
 </body>
 </html>
+
+
+
+<?php include 'connection.php'; ?>
+<?php
+$content = array();
+while($row = $result->fetch_assoc()) {
+$content[] = $row["sisu"];
+}
+?>
+
+<?php echo $content[0] ?>
+<?php echo $content[1] ?>

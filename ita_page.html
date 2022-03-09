@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'connection.php'; ?>
+<?php
+$content = array();
+while($row = $itaresult->fetch_assoc()) {
+$content[] = $row["sisu"];
+}
+?>
 <head>
 
     <title>About_page</title>
@@ -45,9 +52,7 @@
     <div class="overlay"></div>
     <div class="description">
         <h1>Welcome to the Landing Page!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-            luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id
-            libero fringilla, in pharetra sem ullamcorper.</p>
+        <p><?php echo $content[0] ?></p>
         <button class="btn btn-outline-secondary btn-lg">Tell Me More!</button>
     </div>
 
@@ -57,22 +62,19 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Lorem ipsum</h3>
             <img class="about-image-1" src="images/qjdp8o2cval51.png" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-                luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+            <p><?php echo $content[1] ?></p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Lorem ipsum</h3>
             <img class="about-image-1" src="images/qjdp8o2cval51.png" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-                luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+            <p><?php echo $content[0] ?></p>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="feature-title">Lorem ipsum</h3>
             <img class="about-image-1" src="images/qjdp8o2cval51.png" class="img-fluid">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante
-                luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+            <p><?php echo $content[1] ?></p>
         </div>
     </div>
     <span id="date-display"></span><br>
@@ -85,10 +87,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat
-                    ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat
-                    ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+                <p><?php echo $content[0] ?></p>
+                <p><?php echo $content[1] ?></p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <h6 class="text-uppercase font-weight-bold">Contact</h6>

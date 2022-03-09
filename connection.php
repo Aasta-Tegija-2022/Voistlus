@@ -12,8 +12,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT toimumis_aeg, lopp_aeg, oppegrupp, sundmus  FROM voog";
-$result = $conn->query($sql);
+$itasql = "SELECT sisu FROM tekst WHERE grupp = 'ITA'";
+$itaresult = $conn->query($itasql);
+
+$itssql = "SELECT sisu FROM tekst WHERE grupp = 'ITS'";
+$itsresult = $conn->query($itssql);
 
 $conn->close();
 ?>
