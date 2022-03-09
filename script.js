@@ -17,7 +17,7 @@ class Schedule {
 }
 
 var weekDay = new Date().getDay(); //Get weekday index
-var weekStart = new Date(Date.now() - 86400000*(weekDay-(weekDay-1))) //Subtract time to get to Monday
+var weekStart = new Date(Date.now() - 86400000*(weekDay-1)) //Subtract time to get to Monday
 .toISOString().split('T')[0] //Convert to YYYY-MM-DD
 
 groups = {ita: new Schedule(1433), its: new Schedule(1508)}
@@ -90,7 +90,9 @@ function clearTable() {
 	}
 }
 
-let displayedGroup = "ita";
+if (!displayedGroup) { //this shouldn't trigger but just in case
+	displayedGroup = "ita";
+}
 let displayedDay = 1;
 
 function changeDay(which) {
@@ -100,9 +102,9 @@ function changeDay(which) {
 	populateTable(groups[displayedGroup], displayedDay);
 }
 
-async function init() {
-	await getSchedule(groups[displayedGroup]); //await doesn't work here i don't know why
-	setTimeout(function(){populateTable(groups[displayedGroup], 1)},150);
+function init() {
+	getSchedule(groups[displayedGroup]); //await didn't work here i don't know why
+	setTimeout(function(){populateTable(groups[displayedGroup], 1)},200);
 	for(let i in groups) {
 		if(i !== displayedGroup) { //The displayed group already has data, no need to get twice
 			getSchedule(groups[i]);
@@ -110,4 +112,4 @@ async function init() {
 	}
 }
 
-init();
+init()
