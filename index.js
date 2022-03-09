@@ -8,7 +8,8 @@ var ready = (callback) => {
 ready(() => {
     document.querySelector(".header").style.height = window.innerHeight + "px";
 })
-document.querySelector("#go-to-aboutpage").addEventListener("click", function () {
-    window.location = "ita_page.html.html"
+document.querySelector("#its-page-change").addEventListener("click", function () {
+    window.location = "its_page.html"
 })
+
 
