@@ -76,16 +76,13 @@ $content[] = $row["sisu"];
         </div>
     </div>
     <!--    Key events -->
-    <h1>Ligma</h1>
-    <p>{idk date placeholder}</p>
-    <p>siia tulevad väga tähtsad informatsiooni jupid tähtsatest võtmetest wow ligma siia tulevad väga tähtsad
-        informatsiooni jupid tähtsatest võtmetest wow ligma siia tulevad väga tähtsad informatsiooni jupid tähtsatest
-        võtmetest wow ligma siia tulevad väga tähtsad informatsiooni jupid tähtsatest võtmetest wow ligma siia tulevad
-        väga tähtsad</p>
-
-    <h1>Figma</h1>
-    <p>{insert img here} </p>
-    <p>Ligma nuuuuts placeholder text that aron will remove and addd his cool based database text Ligma nuuuuts placeholder text that aron will remove and addd his cool based database text Ligma nuuuuts placeholder text that aron will remove and addd his cool based database text Ligma nuuuuts placeholder text that aron will remove and addd his cool based database text </p>
+    <?php
+    while($row = $eventresult->fetch_assoc()) {
+    echo '<h1> ' . $row[oppegrupp] . ' </h1> ';
+    echo '<p>' . $row[sundmus] . '</p>';
+    echo '<p> ' . $row[toimumis_aeg] . ' - ' . $row[lopp_aeg] . ' </p>';
+    }
+    ?>
 </div>
 <footer class="page-footer">
     <div class="container">
