@@ -59,16 +59,6 @@ body {
 #date-display {
     font-weight: bold ;
 }
-table, th, tr, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-td, th {
-    padding: 5px 15px;
-    text-align: left;
-    width: 60px;
-}
 
 .header {
     background-image: url('images/voco muster RGB-01.png');

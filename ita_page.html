@@ -18,6 +18,7 @@ $content[] = $row["sisu"];
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 
 </head>
@@ -78,9 +79,12 @@ $content[] = $row["sisu"];
     </div>
     <p><?php echo $content[2] ?></p>
     <span id="date-display"></span><br>
+    <button onclick="changeDay(-1)"><---</button><button onclick="changeDay(1)">---></button>
     <div id="table-container"></div>
     <script>const displayedGroup = "ita"</script>
     <script src="script.js" defer></script>
+<!--    Key events -->
+    
 </div>
 <footer class="page-footer">
     <div class="container">
