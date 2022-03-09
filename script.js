@@ -2,7 +2,7 @@ class Schedule {
 	constructor(id) {
 		this.baseURL = "https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?grupp="+id+"&nadal="+weekStart;
 	}
-	
+
 	set data(data) {
 		this.allData = data;
 		this.currentDate = data.nadal;
@@ -10,9 +10,9 @@ class Schedule {
 		this.times = data.ajad;
 		this.classes = data.tunnid
 	}
-	
+
 	getClasses(day) { //Gets classes for N day of the week. (1-5)
-		return this.classes[Object.keys(this.classes)[day-1]] 
+		return this.classes[Object.keys(this.classes)[day-1]]
 	}
 }
 
@@ -52,7 +52,7 @@ function createTable() {
 		headerRow.appendChild(headerText);
 	}
 	table.appendChild(headerRow);
-	
+
 	for(let i=0; i<6; i++) {
 		let row = document.createElement("tr");
 		let time = document.createElement("th");
@@ -106,7 +106,7 @@ function changeDay(which) {
 
 function init() {
 	getSchedule(groups[displayedGroup]); //await didn't work here i don't know why
-	setTimeout(function(){populateTable(groups[displayedGroup], 1)},200);
+	setTimeout(function(){populateTable(groups[displayedGroup], 1)},500);
 	for(let i in groups) {
 		if(i !== displayedGroup) { //The displayed group already has data, no need to get twice
 			getSchedule(groups[i]);

@@ -9,6 +9,6 @@ ready(() => {
     document.querySelector(".header").style.height = window.innerHeight + "px";
 })
 document.querySelector("#go-to-aboutpage").addEventListener("click", function () {
-    window.location = "about_page.html"
+    window.location = "ita_page.html.html"
 })
 
