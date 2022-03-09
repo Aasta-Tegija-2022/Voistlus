@@ -82,6 +82,9 @@ function populateTable(group, day) {
 		}
 		//times.indexOf(groupClass.algus);
 	}
+	for(let i in tableRows) {
+		tableRows[i].childElementCount === 1 ? tableRows[i].classList.add("hidden-row") : tableRows[i].classList.remove("hidden-row")
+	}
 }
 
 function clearTable() {
