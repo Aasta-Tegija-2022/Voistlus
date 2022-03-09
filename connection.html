@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php include 'connection.php'; ?>
+<?php
+  while($row = $result->fetch_assoc()) {
+echo "Sündmus: " . $row["sundmus"]. "<br> Õppegrupp: " . $row["oppegrupp"]. "<br>" . "Algus: " . $row["toimumis_aeg"] . "<br>" . "Lõpp: " . $row["lopp_aeg"] . "<br>"; }
+?>
+</body>
+</html>
