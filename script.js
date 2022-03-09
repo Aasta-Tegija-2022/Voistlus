@@ -44,10 +44,11 @@ var details = ["Aeg", "Aine", "Klassiruum", "\xD5petaja"];
 function createTable() {
 	let table = document.createElement("table");
 	let headerRow = document.createElement("tr");
+	headerRow.classList.add("header-row");
 	for(let i=0; i<4; i++) {
 		let headerText = document.createElement("th");
 		headerText.textContent = details[i];
-		
+		headerText.classList.add("header-text");
 		headerRow.appendChild(headerText);
 	}
 	table.appendChild(headerRow);
@@ -55,10 +56,10 @@ function createTable() {
 	for(let i=0; i<6; i++) {
 		let row = document.createElement("tr");
 		let time = document.createElement("th");
-		
+		row.classList.add("table-row");
 		time.textContent = times[i];
+		time.classList.add("table-time");
 		row.appendChild(time);
-		
 		tableRows.push(row);
 		table.appendChild(row);
 	}
@@ -76,6 +77,7 @@ function populateTable(group, day) {
 		for(let i in detailVars) {
 			let elem = document.createElement("td");
 			elem.textContent = classInfo[detailVars[i]];
+			elem.classList.add("table-text")
 			tableRows[timeSlot].appendChild(elem);
 		}
 		//times.indexOf(groupClass.algus);
