@@ -14,21 +14,22 @@ if ($conn->connect_error) {
 
 $sql = "SELECT sisu FROM tekst WHERE grupp=?"; // SQL with parameters
 $stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $grupp);
 
 $grupp = "ITA";
-$stmt->bind_param("s", $grupp);
 $stmt->execute();
 $itaresult = $stmt->get_result();
 
 $grupp = "ITS";
-$stmt->bind_param("s", $grupp);
 $stmt->execute();
 $itsresult = $stmt->get_result();
 
 $grupp = "NONE";
-$stmt->bind_param("s", $grupp);
 $stmt->execute();
 $result = $stmt->get_result();
+
+$eventsql = "SELECT oppegrupp, sundmus, toimumis_aeg, lopp_aeg FROM voog";
+$eventresult = $conn->query($eventsql);
 
 $conn->close();
 ?>
